@@ -7,9 +7,9 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "C:\\Users\\juhi.sinha\\eclipse-workspace\\17oct\\features\\Readniess.feature",
+		features = "C:\\Users\\juhi.sinha\\eclipse-workspace\\17oct\\features",
 		glue={"stepDefinition"},
-		tags = "@gp1",
+//		tags = "@DemoWebShop",
 		dryRun=false,		
 		plugin= {"pretty"},
 		monochrome = true

@@ -11,27 +11,27 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Template {
+public class AddToCart {
 	WebDriver driver;	
 
-	@FindBy(xpath=" //*[text()=' Create a template']")
-	WebElement createAtemplateLink;
+	@FindBy(xpath="//*[contains(text(),'Books')][1]")
+	WebElement Books;
 	
-	@FindBy(xpath="//*[text()='Template Name']")
-	WebElement templateName;
+	@FindBy(xpath="//*[text()='Health Book']/following::input[@value='Add to cart']")
+	WebElement addToCart;
 
 
-	public  Template(WebDriver driver) {
+	public  AddToCart(WebDriver driver) {
 		 this.driver = driver;
          PageFactory.initElements(driver, this);
 	}
 
 
-public void createATemplate() {		
-	createAtemplateLink.click();
-	templateName.click();
-//	WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
-//	wait.until(ExpectedConditions.elementToBeClickable(templateName));
-//	templateName.sendKeys("ASC95193");
+public void clickOnBooks() {		
+	Books.click();
+	}
+
+public void addAbook() {		
+	addToCart.click();
 	}
 }
