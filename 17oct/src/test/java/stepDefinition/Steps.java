@@ -9,9 +9,10 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageObjects.AddToCart;
 import pageObjects.Login;
 import pageObjects.Registration;
-import pageObjects.Template;
+import pageObjects.AddToCart;
 
 
 public class Steps {
@@ -53,5 +54,17 @@ public class Steps {
 	    
 	}
 	
+	@Given("I click on Books")
+	public void i_click_on_books() {
+		AddToCart atc =new AddToCart(driver); 
+		atc.clickOnBooks();
+	}
+
+	@Given("I select one book to the cart")
+	public void i_select_one_book_to_the_cart() {
+		AddToCart atc =new AddToCart(driver); 
+		atc.addAbook();
+	}
+
 	
 }
