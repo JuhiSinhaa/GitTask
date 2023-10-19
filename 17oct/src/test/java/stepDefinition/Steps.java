@@ -10,6 +10,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.AddAGiftCard;
+import pageObjects.AddDesktop;
 import pageObjects.Login;
 import pageObjects.Registration;
 
@@ -58,6 +59,18 @@ public class Steps {
 	public void add_gift_card() {
 		AddAGiftCard gift=new AddAGiftCard(driver);
 		gift.addGift();
+	}
+	
+	@Then("add desktop")
+	public void add_desktop() {
+		AddDesktop desk=new AddDesktop(driver);
+		desk.addADesktop();
+	}
+	
+	@Then("Logout from the application")
+	public void logout_from_the_application() {
+		AddDesktop desk=new AddDesktop(driver);
+		desk.logout();
 	}
 	
 }
