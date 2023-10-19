@@ -9,22 +9,21 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.AddAGiftCard;
 import pageObjects.AddDesktop;
+import pageObjects.AddAGiftCard;
 import pageObjects.Login;
 import pageObjects.Registration;
-
-
+import pageObjects.AddToCart;
 
 public class Steps {
+  
 	WebDriver driver;
 	@Given("I hit the url {string}")
 	public void i_hit_the_url(String url) {
 		driver =new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		   driver.get(url);
-		   
+		   driver.get(url);	   
 	}
 
 	@Given("Enter  all the details")
@@ -72,5 +71,16 @@ public class Steps {
 		AddDesktop desk=new AddDesktop(driver);
 		desk.logout();
 	}
-	
+
+	@Given("I click on Books")
+	public void i_click_on_books() {
+		AddToCart atc =new AddToCart(driver); 
+		atc.clickOnBooks();
+	}
+
+	@Given("I select one book to the cart")
+	public void i_select_one_book_to_the_cart() {
+		AddToCart atc =new AddToCart(driver); 
+		atc.addAbook();
+	}	
 }
