@@ -9,9 +9,10 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageObjects.AddAGiftCard;
 import pageObjects.Login;
 import pageObjects.Registration;
-import pageObjects.Template;
+
 
 
 public class Steps {
@@ -53,5 +54,10 @@ public class Steps {
 	    
 	}
 	
+	@Then("add gift card")
+	public void add_gift_card() {
+		AddAGiftCard gift=new AddAGiftCard(driver);
+		gift.addGift();
+	}
 	
 }
