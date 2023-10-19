@@ -37,6 +37,7 @@ public class AddAGiftCard {
 
 public void addGift() {		
 	giftCards.click();
+	gift1.click();
 	emailFriendLink.click();
 	emailFriend.sendKeys("abc.test@gmail.com");
 	sendEmailtoFriend.click();
