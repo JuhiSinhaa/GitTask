@@ -9,7 +9,7 @@ Feature: Registration
     Then I click on register button
     
     @Login
-  Scenario: Do Register
+  Scenario: Login
     Given I hit the url "https://demowebshop.tricentis.com/register"
     When click on login
     And enter credentials

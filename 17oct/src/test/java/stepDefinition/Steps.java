@@ -9,21 +9,21 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.AddToCart;
+import pageObjects.AddDesktop;
+import pageObjects.AddAGiftCard;
 import pageObjects.Login;
 import pageObjects.Registration;
 import pageObjects.AddToCart;
 
-
 public class Steps {
+  
 	WebDriver driver;
 	@Given("I hit the url {string}")
 	public void i_hit_the_url(String url) {
 		driver =new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		   driver.get(url);
-		   
+		   driver.get(url);	   
 	}
 
 	@Given("Enter  all the details")
@@ -54,6 +54,24 @@ public class Steps {
 	    
 	}
 	
+	@Then("add gift card")
+	public void add_gift_card() {
+		AddAGiftCard gift=new AddAGiftCard(driver);
+		gift.addGift();
+	}
+	
+	@Then("add desktop")
+	public void add_desktop() {
+		AddDesktop desk=new AddDesktop(driver);
+		desk.addADesktop();
+	}
+	
+	@Then("Logout from the application")
+	public void logout_from_the_application() {
+		AddDesktop desk=new AddDesktop(driver);
+		desk.logout();
+	}
+
 	@Given("I click on Books")
 	public void i_click_on_books() {
 		AddToCart atc =new AddToCart(driver); 
@@ -64,7 +82,5 @@ public class Steps {
 	public void i_select_one_book_to_the_cart() {
 		AddToCart atc =new AddToCart(driver); 
 		atc.addAbook();
-	}
-
-	
+	}	
 }
